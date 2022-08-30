@@ -10,8 +10,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     public class ListAeropuertosModel : PageModel
     {
         public void OnGet()
-        {
-            
+        {            
         }
     }
 }
