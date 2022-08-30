@@ -11,7 +11,6 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     {
         public void OnGet()
         {
- 
         }
     }
 }
