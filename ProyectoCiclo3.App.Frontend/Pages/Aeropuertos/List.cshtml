@@ -1,4 +1,5 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListAeropuertosModel
 @{
 }
  
@@ -11,32 +12,25 @@
       <th scope="col">Pais</th>
       <th scope="col">Coord X</th>
       <th scope="col">Coord Y</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>El Dorado</td>
-      <td>Bogota</td>
-      <td>Colombia</td>
-      <td>17.14545545</td>
-      <td>30.454578</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Leonardo Davinci</td>
-      <td>Roma</td>
-      <td>Italia</td>
-      <td>117.1454545</td>
-      <td>20.454578</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Jose Maria Cordova</td>
-      <td>Rio Negro</td>
-      <td>Colombia</td>
-      <td>137.14645</td>
-      <td>50.45478</td>
-    </tr>
+   @foreach (var aeropuerto in Model.Aeropuertos)
+    {
+        <tr>
+            <td>@aeropuerto.id</td>
+            <td>@aeropuerto.nombre</td>
+            <td>@aeropuerto.ciudad</td>
+            <td>@aeropuerto.pais</td>
+            <td>@aeropuerto.coord_x</td>
+            <td>@aeropuerto.coord_y</td>
+            <td>
+              <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
+            </td>
+        </tr>
+    }
   </tbody>
 </table>
