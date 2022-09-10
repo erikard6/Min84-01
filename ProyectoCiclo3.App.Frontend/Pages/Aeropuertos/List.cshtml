@@ -26,9 +26,14 @@
             <td>@aeropuerto.coord_x</td>
             <td>@aeropuerto.coord_y</td>
             <td>
-              <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
-              <a class="btn btn-danger" href="">Eliminar</a>
+              <div class="btn-group" role="group">
+                <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
+                <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+                <form method="POST">
+                  <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@aeropuerto.id">
+                  <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+                </form> 
+              </div>
             </td>
         </tr>
     }

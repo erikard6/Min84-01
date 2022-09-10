@@ -41,5 +41,25 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return aeropuerto;
         }
 
+        public Aeropuertos Create(Aeropuertos newAeropuerto)
+        {
+           if(aeropuertos.Count > 0){
+                newAeropuerto.id = aeropuertos.Max(a => a.id) +1; 
+            }else{
+                newAeropuerto.id = 1; 
+            }
+           aeropuertos.Add(newAeropuerto);
+           return newAeropuerto;
+        }
+
+        public Aeropuertos Delete(int id)
+        {
+            var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == id);
+            aeropuertos.Remove(aeropuerto);
+            return aeropuerto;
+        }
+
+
+
     }
 }

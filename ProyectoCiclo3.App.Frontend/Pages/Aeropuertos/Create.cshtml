@@ -6,19 +6,20 @@
 <div class="text-center">
     <form method = "POST">
         <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre" minlength="3">
-        
+        <input type="text" class="form-control" required placeholder="Nombre" minlength="3" asp-for="Aeropuerto.nombre">
+        <span class="text-danger" asp-validation-for="Aeropuerto.nombre"></span>
+
         <label for="ciudad" class="form-label">Ciudad:</label>
-        <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad">
+        <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" asp-for="Aeropuerto.ciudad">
 
         <label for="pais" class="form-label">Pais:</label>
-        <input type="text" class="form-control" id="pais" name="pais" required placeholder="Pais">
+        <input type="text" class="form-control" id="pais" name="pais" required placeholder="Pais" asp-for="Aeropuerto.pais">
 
         <label for="coord_x" class="form-label">Coord X:</label>
-        <input type="number" class="form-control" id="coord_x" name="coord_x" required placeholder="Coord X">
+        <input type="number" class="form-control" id="coord_x" name="coord_x" required placeholder="Coord X" asp-for="Aeropuerto.coord_x" step="any">
 
         <label for="coord_y" class="form-label">Coord Y:</label>
-        <input type="number" class="form-control" id="coord_y" name="coord_y" required placeholder="Coord Y">
+        <input type="number" class="form-control" id="coord_y" name="coord_y" required placeholder="Coord Y" asp-for="Aeropuerto.coord_y" step="any">
         <hr>
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>
