@@ -8,5 +8,4 @@ namespace ProyectoCiclo3.App.Dominio{
         public int numero_banos { get; set; }
         public int capacidad { get; set; }
     }
- 
 }
