@@ -42,14 +42,14 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             }
         }
 
-        public Rutas Update(Rutas newRuta)
+        public Rutas Update(int id, int origen, int destino, int tiempo_estimado)
         {
-            var ruta = _appContext.Rutas.Find(newRuta.id);
+            var ruta = _appContext.Rutas.Find(id);
             if (ruta != null)
-            {
-                ruta.origen = newRuta.origen;
-                ruta.destino = newRuta.destino;
-                ruta.tiempo_estimado = newRuta.tiempo_estimado;
+            {   
+                ruta.destino = _appContext.Aeropuertos.Find(destino);
+                ruta.origen = _appContext.Aeropuertos.Find(origen);
+                ruta.tiempo_estimado = tiempo_estimado;
                 //Guardar en base de datos
                 _appContext.SaveChanges();
             }
